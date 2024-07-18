@@ -178,7 +178,3 @@ stem from having a low quality sample, or the reads not being properly amplified
 
 - The taxonomy assignation is done at the Species level only if only a 100%, exact matching. This can make that some Bacteria/Eukarya present differences
 in the identification at that level when comparing with OTU results. See a link explaining this in more detail [here](https://benjjneb.github.io/dada2/assign.html#species-assignment).
-
-
-**Adrià & Aleix**  
-*Backbone team* :skull:
