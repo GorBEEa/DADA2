@@ -30,7 +30,7 @@ The pipeline is divided into 4 big steps (plus an initial preprocessing step):
 To download the pipeline to your computer/cluster, open the terminal and go to your desired directory with `cd`. Then, type the following (assuming that you have `git` installed):
 
 ```sh
-    git clone --depth 1 https://github.com/adriaaula/dada2_guidelines.git
+    git clone --depth 1 https://github.com/GorBEEa/DADA2.git
 ```
 
 (You can also download the repository from the [Github server](https://github.com/GorBEEa/DADA2)).
