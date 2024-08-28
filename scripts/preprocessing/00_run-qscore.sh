@@ -21,8 +21,8 @@
 #[1] /input dataset/, with the fastq.gz (the name of the samples
 #    has to be present on the left and separated by an underscore.
 #    (multiple underscores are OK as long as the name is on the left).
-#    Examples: sample120412-g20-mallorca_R1.fastq.gz
-#              bl120513_primerx_R1.fastq.gz
+#    Examples: sample4582515-ITS1-gorbea_R1.fastq.gz
+#              GBP23040702M_16S_R2.fastq.gz
 
 #[2] /output dir/ A directory in which all the output will be stored.
 #                 If you have copied the github project, you should have
@@ -34,14 +34,14 @@
 # If your cluster works with modules, first you
 # should activate them.
 #module load gcc/4.9.0
-#module load Rstats/R-3.4.1
+#module load R/4.3.2-gfbf-2023a
 
-module load R
+module load R/4.3.2-gfbf-2023a
 
 Rscript scripts/preprocessing/00_qscore.R \
         data/trimmed \
         data/dada2 \
-        blanes_project
+        2023_16S_GorBEEa_prj
 
 # IMPORTANT POINT !!!!
 # If you want to save the ouptput//errors in a logfile, simply add
