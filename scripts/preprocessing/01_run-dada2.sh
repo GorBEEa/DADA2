@@ -1,11 +1,16 @@
 #!/bin/sh
 
-#SBATCH --account=<your-account>
-#SBATCH --job-name=dada2
-#SBATCH --ntasks=1
+#SBATCH --job-name=O1_dada2
+#SBATCH --error=data/logs/%x-%j.err
+#SBATCH --output=data/logs/%x-%j.out
+
+#SBATCH --partition=general # This is the default partition
+#SBATCH --qos=regular
 #SBATCH --cpus-per-task=48
-#SBATCH --output=data/logs/1_dada2_%J.out
-#SBATCH --error=data/logs/1_dada2_%J.err
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=1
+#SBATCH --time=10:00:00
+#SBATCH --mem=24000
 
 ### DADA2 pipeline ######
 ## ~~ Trimming, error generation and DADA2 run ~~ ##

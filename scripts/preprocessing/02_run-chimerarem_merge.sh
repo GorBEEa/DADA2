@@ -1,11 +1,17 @@
 #!/bin/sh
 
-#SBATCH --account=<your-account>
-#SBATCH --job-name=merge_nochimera
-#SBATCH --ntasks=1
+#SBATCH --job-name=O2_merge_nochimera
+#SBATCH --error=data/logs/%x-%j.err
+#SBATCH --output=data/logs/%x-%j.out
+
+#SBATCH --partition=general # This is the default partition
+#SBATCH --qos=regular
 #SBATCH --cpus-per-task=2
-#SBATCH --output=data/logs/2_merge_nochimera_%J.out
-#SBATCH --error=data/logs/2_merge_nochimera_%J.err
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=1
+#SBATCH --time=10:00:00
+#SBATCH --mem=24000
+
 
 ### DADA2 pipeline ######
 ## ~~ Trimming, error generation and DADA2 run ~~ ##
@@ -33,8 +39,7 @@
 #[5] /chimera removal method/ One of 'consensus' (default), 'pooled' or 'per-sample'
 #                             If you used pooling in dada inference step you should use 'pooled' method
 
-module load gcc
-module load R
+module load module load R/4.3.2-gfbf-2023a
 
 # remember, this is an example: you should change [1,3,4] at least
 

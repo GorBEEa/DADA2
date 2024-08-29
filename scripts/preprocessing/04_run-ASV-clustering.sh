@@ -1,11 +1,16 @@
 #!/bin/sh
 
-#SBATCH --account=<your-account>
-#SBATCH --job-name=clustering
-#SBATCH --ntasks=1
+#SBATCH --job-name=O4_clustering
+#SBATCH --error=data/logs/%x-%j.err
+#SBATCH --output=data/logs/%x-%j.out
+
+#SBATCH --partition=general # This is the default partition
+#SBATCH --qos=regular
 #SBATCH --cpus-per-task=48
-#SBATCH --output=data/logs/4_clustering_%J.out
-#SBATCH --error=data/logs/4_clustering_%J.err
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=1
+#SBATCH --time=10:00:00
+#SBATCH --mem=24000
 
 ### DADA2 pipeline ######
 ###### clustering ######
@@ -21,7 +26,7 @@
 #[4] /name/ A common identifier to be sure that the output is the
 #            correct one. You will thank us that :^)
 
-module load R
+module load R/4.3.2-gfbf-2023a
 
 # remember, this is an example
 

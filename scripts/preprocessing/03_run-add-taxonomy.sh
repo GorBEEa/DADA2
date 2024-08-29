@@ -1,11 +1,17 @@
 #!/bin/sh
 
-#SBATCH --account=<your-account>
-#SBATCH --job-name=add_tax
-#SBATCH --ntasks=1
+#SBATCH --job-name=O3_add_taxonomy
+#SBATCH --error=data/logs/%x-%j.err
+#SBATCH --output=data/logs/%x-%j.out
+
+#SBATCH --partition=general # This is the default partition
+#SBATCH --qos=regular
 #SBATCH --cpus-per-task=48
-#SBATCH --output=data/logs/3_add_taxonomy_%J.out
-#SBATCH --error=data/logs/3_add_taxonomy_%J.err
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=1
+#SBATCH --time=10:00:00
+#SBATCH --mem=24000
+
 
 ### DADA2 pipeline ######
 ## ~~ Trimming, error generation and DADA2 run ~~ ##
@@ -48,8 +54,7 @@
 #   DADA2 (default 50):
 #       The minimum bootstrap confidence for assigning a taxonomic level.
 
-module load gcc
-module load R
+module load R/4.3.2-gfbf-2023a
 
 # Example with DECIPHER
 

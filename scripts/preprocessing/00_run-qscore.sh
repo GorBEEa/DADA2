@@ -1,13 +1,18 @@
 #!/bin/sh
 
-#SBATCH --account=<your-account>
-#SBATCH --job-name=qprofile
-#SBATCH --ntasks=1
-#SBATCH --output=data/logs/0_qprofile_%J.out
-#SBATCH --error=data/logs/0_qprofile_%J.err
+#SBATCH --job-name=OO_qprofile
+#SBATCH --error=data/logs/%x-%j.err
+#SBATCH --output=data/logs/%x-%j.out
 
-# ~ here you will have to include the chunk necessary for your cluster!~
+#SBATCH --partition=general # This is the default partition
+#SBATCH --qos=regular
+#SBATCH --cpus-per-task=1
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=1
+#SBATCH --time=10:00:00
+#SBATCH --mem=24000
 
+# Time and memory consumption estimates are orientative. Please adjust them according to you requirments.
 
 ### DADA2 pipeline ######
 ## ~~ Q profile ~~ ##
