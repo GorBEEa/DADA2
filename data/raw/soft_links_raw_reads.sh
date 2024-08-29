@@ -2,14 +2,13 @@
 
 # GorBEEa project 2024
 
-# Bash script to rename raw reads from the previous generated tab delimited txt file.
-# It needs a table with the relationship of names to change (e.g. joined_IDs.txt) and the loci sequenced.
+# Bash script to create soft lynks of raw reads to the working directory.
 
 # Usage: ./soft_links_raw_reads.sh /scratch/user/gorbeea_genomic/raw_reads
 
 # Check if a directory was provided as an argument
 if [ -z "$1" ]; then
-    echo "Usage: $0 /path/to/directory"
+    echo "Usage: $0 /my/original/data/"
     exit 1
 fi
 
