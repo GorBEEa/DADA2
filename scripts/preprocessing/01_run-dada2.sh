@@ -50,13 +50,12 @@
 #                     Write 'pseudo' to perform pseudo-pooling between individually processed samples (less computationally demanding).
 #                     If you do not write anything default is no pooling.
 
-module load gcc
-module load R
+module load R/4.3.2-gfbf-2023a
 
 Rscript scripts/preprocessing/01_dada2-error-output.R \
         data/trimmed \
         data/dada2/ \
-        blanes_project \
+        2023_16S_GorBEEa_prj \
         230,220 \
         2,6 \
         15
@@ -66,7 +65,7 @@ Rscript scripts/preprocessing/01_dada2-error-output.R \
 #Rscript scripts/preprocessing/1_dada2-error-output.R \
 #        data/raw/4300 \
 #        data/dada2/ \
-#        blanes_run4300 \
+#        GorBEEa_prj_run4300 \
 #        210,200 \
 #        1,4 \
 #        15

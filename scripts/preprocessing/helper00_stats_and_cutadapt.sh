@@ -1,9 +1,18 @@
 #!/bin/bash
-#SBATCH --account=<your-account>
+
 #SBATCH --job-name=cutadapt
-#SBATCH --ntasks=1
-#SBATCH --output=data/logs/cutadapt_%J.out
-#SBATCH --error=data/logs/cutadapt_%J.err
+#SBATCH --error=data/logs/%x-%j.err
+#SBATCH --output=data/logs/%x-%j.out
+
+#SBATCH --partition=general # This is the default partition
+#SBATCH --qos=regular
+#SBATCH --cpus-per-task=1
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=1
+#SBATCH --time=10:00:00
+#SBATCH --mem=24000
+
+# Time and memory consumption estimates are orientative. Please adjust them according to you requirments.
 
 DATA_DIR=data/raw # where your untrimmed files are located
 PRIMER_F="TTGTACACACCGCCC" # 1389F, change it for your forward primer (5'-3')
@@ -20,9 +29,9 @@ OUT_DIR=data/trimmed
 mkdir -p data/logs/cutadapt
 LOG_DIR=data/logs/cutadapt
 
-# load Python for cutadapt
+# Please check the correct version of cutadapt
 
-module load cutadapt
+module load cutadapt/4.8-GCCcore-12.2.0
 
 # cutadapt
 
