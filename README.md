@@ -35,13 +35,13 @@ To download the pipeline to your computer/cluster, open the terminal and go to y
 
 (You can also download the repository from the [Github server](https://github.com/GorBEEa/DADA2)).
 
-The directory `dada2/` will be copied to your computer. It contains the following files and subdirectories:
+The directory `DADA2/` will be copied to your computer. It contains the following files and subdirectories:
 
 - README.md: this readme file.
 - `scripts/`: where all scripts are located.
 - `data/`:
     - `logs/`: all log files will be dumped here.
-    - `raw/`: it contains a vanilla dataset, initially. It will contain your data. We recommend that instead of copying it, you use symlinks pointing to its original directory. You can easily create a symlink like this: `ln -s /my/original/data/*fastq.gz data/raw/`.
+    - `raw/`: it contains a vanilla dataset, initially. It will contain your data. We recommend that instead of copying it, you use soft links pointing to its original directory. You can easily create a soft lynk by running the script `soft_links_raw_reads.sh` placed within the folder like this: `./soft_links_raw_reads.sh /my/original/data/`.
     - `dada2/`: where output files from `DADA2` are written.
 
 For everything to work properly, all scripts have to be submitted from the root directory of your project (`dada_guidelines/` in this case).
