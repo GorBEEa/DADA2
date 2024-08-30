@@ -54,6 +54,8 @@
 #   DADA2 (default 50):
 #       The minimum bootstrap confidence for assigning a taxonomic level.
 
+module load Python/Python-3.10.9-Anaconda3-2023.03-1
+module load Mamba/23.1.0-4
 module load R/4.3.2-gfbf-2023a
 
 # Example with DECIPHER

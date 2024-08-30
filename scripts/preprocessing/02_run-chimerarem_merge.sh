@@ -39,6 +39,8 @@
 #[5] /chimera removal method/ One of 'consensus' (default), 'pooled' or 'per-sample'
 #                             If you used pooling in dada inference step you should use 'pooled' method
 
+module load Python/Python-3.10.9-Anaconda3-2023.03-1
+module load Mamba/23.1.0-4
 module load module load R/4.3.2-gfbf-2023a
 
 # remember, this is an example: you should change [1,3,4] at least

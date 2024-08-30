@@ -41,6 +41,8 @@
 #module load gcc/4.9.0
 #module load R/4.3.2-gfbf-2023a
 
+module load Python/Python-3.10.9-Anaconda3-2023.03-1
+module load Mamba/23.1.0-4
 module load R/4.3.2-gfbf-2023a
 
 Rscript scripts/preprocessing/00_qscore.R \

@@ -26,6 +26,8 @@
 #[4] /name/ A common identifier to be sure that the output is the
 #            correct one. You will thank us that :^)
 
+module load Python/Python-3.10.9-Anaconda3-2023.03-1
+module load Mamba/23.1.0-4
 module load R/4.3.2-gfbf-2023a
 
 # remember, this is an example

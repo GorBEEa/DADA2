@@ -55,6 +55,8 @@
 #                     Write 'pseudo' to perform pseudo-pooling between individually processed samples (less computationally demanding).
 #                     If you do not write anything default is no pooling.
 
+module load Python/Python-3.10.9-Anaconda3-2023.03-1
+module load Mamba/23.1.0-4
 module load R/4.3.2-gfbf-2023a
 
 Rscript scripts/preprocessing/01_dada2-error-output.R \
