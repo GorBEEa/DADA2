@@ -29,9 +29,10 @@ OUT_DIR=data/trimmed
 mkdir -p data/logs/cutadapt
 LOG_DIR=data/logs/cutadapt
 
-# Please check the correct version of cutadapt
+# Please check the correct version of tools
 
 module load cutadapt/4.8-GCCcore-12.2.0
+module load SeqKit/2.8.2
 
 # cutadapt
 
@@ -58,7 +59,6 @@ done
 
 ## Stats
 
-module load seqkit 
 ### Additionally, we can extract the stats of the files
 # If you don't need to cut the adapter, you can simply copy this last command. 
 
