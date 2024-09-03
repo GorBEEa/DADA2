@@ -43,7 +43,10 @@
 
 module load Python/Python-3.10.9-Anaconda3-2023.03-1
 module load Mamba/23.1.0-4
-module load R/4.3.2-gfbf-2023a
+
+# If you have a mamba/conda environment.
+# conda activate your_env
+conda activate dada2
 
 Rscript scripts/preprocessing/00_qscore.R \
         data/trimmed \
