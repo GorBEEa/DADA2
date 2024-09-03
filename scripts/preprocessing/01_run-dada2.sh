@@ -1,6 +1,6 @@
 #!/bin/sh
 
-#SBATCH --job-name=O1_dada2
+#SBATCH --job-name=01_dada2
 #SBATCH --error=data/logs/%x-%j.err
 #SBATCH --output=data/logs/%x-%j.out
 
@@ -55,9 +55,18 @@
 #                     Write 'pseudo' to perform pseudo-pooling between individually processed samples (less computationally demanding).
 #                     If you do not write anything default is no pooling.
 
+
+# If your cluster works with modules, first you
+# should activate them.
+#module load gcc/4.9.0
+#module load R/4.3.2-gfbf-2023a
+
 module load Python/Python-3.10.9-Anaconda3-2023.03-1
 module load Mamba/23.1.0-4
-module load R/4.3.2-gfbf-2023a
+
+# If you have a mamba/conda environment.
+# conda activate your_env
+conda activate dada2
 
 Rscript scripts/preprocessing/01_dada2-error-output.R \
         data/trimmed \
