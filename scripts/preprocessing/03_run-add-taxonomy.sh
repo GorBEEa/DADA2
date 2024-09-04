@@ -1,6 +1,6 @@
 #!/bin/sh
 
-#SBATCH --job-name=O3_add_taxonomy
+#SBATCH --job-name=03_add_taxonomy
 #SBATCH --error=data/logs/%x-%j.err
 #SBATCH --output=data/logs/%x-%j.out
 
@@ -54,9 +54,17 @@
 #   DADA2 (default 50):
 #       The minimum bootstrap confidence for assigning a taxonomic level.
 
+# If your cluster works with modules, first you
+# should activate them.
+#module load gcc/4.9.0
+#module load R/4.3.2-gfbf-2023a
+
 module load Python/Python-3.10.9-Anaconda3-2023.03-1
 module load Mamba/23.1.0-4
-module load R/4.3.2-gfbf-2023a
+
+# If you have a mamba/conda environment.
+# conda activate your_env
+conda activate dada2
 
 # Example with DECIPHER
 
@@ -64,7 +72,7 @@ Rscript scripts/preprocessing/03_add-taxonomy.R \
     data/dada2/02_nochimera_mergeruns/blanes_project/blanes_project_seqtab_final.rds \
     data/dada2/ \
     blanes_project \
-    data/assign_tax/SILVA_SSU_r132_March2018.RData \
+    data/assign_tax/SILVA_SSU_r138_2019.RData \
     decipher \
     60
 
