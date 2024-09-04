@@ -69,9 +69,9 @@ conda activate dada2
 # Example with DECIPHER
 
 Rscript scripts/preprocessing/03_add-taxonomy.R \
-    data/dada2/02_nochimera_mergeruns/blanes_project/blanes_project_seqtab_final.rds \
-    data/dada2/ \
-    blanes_project \
+    data/dada2/02_nochimera_mergeruns/2023_16S_GorBEEa_prj/2023_16S_GorBEEa_prj_seqtab_final.rds \
+    data/dada2 \
+    2023_16S_GorBEEa_prj \
     data/assign_tax/SILVA_SSU_r138_2019.RData \
     decipher \
     60

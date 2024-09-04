@@ -1,6 +1,6 @@
 #!/bin/sh
 
-#SBATCH --job-name=O2_merge_nochimera
+#SBATCH --job-name=02_merge_nochimera
 #SBATCH --error=data/logs/%x-%j.err
 #SBATCH --output=data/logs/%x-%j.out
 
@@ -39,16 +39,24 @@
 #[5] /chimera removal method/ One of 'consensus' (default), 'pooled' or 'per-sample'
 #                             If you used pooling in dada inference step you should use 'pooled' method
 
+# If your cluster works with modules, first you
+# should activate them.
+# module load gcc/4.9.0
+# module load R/4.3.2-gfbf-2023a
+
 module load Python/Python-3.10.9-Anaconda3-2023.03-1
 module load Mamba/23.1.0-4
-module load module load R/4.3.2-gfbf-2023a
+
+# If you have a mamba/conda environment.
+# conda activate your_env
+conda activate dada2
 
 # remember, this is an example: you should change [1,3,4] at least
 
 Rscript scripts/preprocessing/02_chimerarem_merge.R \
-                    data/dada2/01_errors-output/blanes_project/blanes_project_seqtab.rds \
-                    data/dada2/ \
-                    blanes_project \
+                    data/dada2/01_errors-output/2023_16S_GorBEEa_prj/2023_16S_GorBEEa_prj_seqtab.rds \
+                    data/dada2 \
+                    2023_16S_GorBEEa_prj \
                     400,450 \
                     consensus
 

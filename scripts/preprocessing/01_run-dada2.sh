@@ -58,8 +58,8 @@
 
 # If your cluster works with modules, first you
 # should activate them.
-#module load gcc/4.9.0
-#module load R/4.3.2-gfbf-2023a
+# module load gcc/4.9.0
+# module load R/4.3.2-gfbf-2023a
 
 module load Python/Python-3.10.9-Anaconda3-2023.03-1
 module load Mamba/23.1.0-4
@@ -80,7 +80,7 @@ Rscript scripts/preprocessing/01_dada2-error-output.R \
 
 #Rscript scripts/preprocessing/1_dada2-error-output.R \
 #        data/raw/4300 \
-#        data/dada2/ \
+#        data/dada2 \
 #        GorBEEa_prj_run4300 \
 #        210,200 \
 #        1,4 \
