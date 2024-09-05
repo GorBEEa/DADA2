@@ -18,7 +18,8 @@ cat(class(id))
 
 asv_sequences <- colnames(seqtab)
 sample_names <- rownames(seqtab)
-dna <- Biostrings::DNAStringSet(asv_sequences)
+#dna <- Biostrings::DNAStringSet(asv_sequences)
+dna <- 
 asv_sizes <- colSums(seqtab)
 
 ## Find clusters of ASVs to form the new OTUs
@@ -31,9 +32,9 @@ dist_matrix <-
                            processors = NULL)
 
 clusters <- 
-  DECIPHER::IdClusters(
-  dist_matrix, 
-  method = "complete",
+  DECIPHER::Clusterize(
+  dna, 
+  method = "overlap",
   cutoff = id, # use `cutoff = 0.03` for a 97% OTU 
   processors = NULL)
 
