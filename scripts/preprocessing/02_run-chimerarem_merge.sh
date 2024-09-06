@@ -57,7 +57,7 @@ Rscript scripts/preprocessing/02_chimerarem_merge.R \
                     data/dada2/01_errors-output/2023_16S_GorBEEa_prj/2023_16S_GorBEEa_prj_seqtab.rds \
                     data/dada2 \
                     2023_16S_GorBEEa_prj \
-                    400,450 \
+                    240,450 \
                     consensus
 
 # If you have multple seqtabs, it should be written like this:

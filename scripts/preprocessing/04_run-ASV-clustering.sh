@@ -1,6 +1,6 @@
 #!/bin/sh
 
-#SBATCH --job-name=O4_clustering
+#SBATCH --job-name=04_clustering
 #SBATCH --error=data/logs/%x-%j.err
 #SBATCH --output=data/logs/%x-%j.out
 

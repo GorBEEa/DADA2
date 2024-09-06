@@ -18,8 +18,7 @@ cat(class(id))
 
 asv_sequences <- colnames(seqtab)
 sample_names <- rownames(seqtab)
-#dna <- Biostrings::DNAStringSet(asv_sequences)
-dna <- 
+dna <- Biostrings::DNAStringSet(asv_sequences)
 asv_sizes <- colSums(seqtab)
 
 ## Find clusters of ASVs to form the new OTUs

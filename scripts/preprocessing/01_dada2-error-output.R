@@ -32,7 +32,7 @@ pool_method <-
 
 ## ------------------------------------------------------------------------
 
-fnFs <- sort(list.files(path, pattern = 'R1.fastq'))
+fnFs <- sort(list.files(path, pattern= 'R1.fastq'))
 fnRs <- sort(list.files(path, pattern= 'R2.fastq'))
 
 if (length(fnFs) == 0){

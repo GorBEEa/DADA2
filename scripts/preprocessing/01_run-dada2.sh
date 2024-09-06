@@ -70,7 +70,7 @@ conda activate dada2
 
 Rscript scripts/preprocessing/01_dada2-error-output.R \
         data/trimmed \
-        data/dada2/ \
+        data/dada2 \
         2023_16S_GorBEEa_prj \
         230,220 \
         2,6 \

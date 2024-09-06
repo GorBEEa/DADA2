@@ -1,6 +1,6 @@
 #!/bin/sh
 
-#SBATCH --job-name=OO_qprofile
+#SBATCH --job-name=00_qprofile
 #SBATCH --error=data/logs/%x-%j.err
 #SBATCH --output=data/logs/%x-%j.out
 
