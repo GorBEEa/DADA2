@@ -79,9 +79,9 @@ Rscript scripts/preprocessing/03_add-taxonomy.R \
 # Example with dada2 classifier (commented to avoid running it)
 
 # Rscript scripts/preprocessing/03_add-taxonomy.R \
-#     data/dada2/02_nochimera_mergeruns/blanes_project/blanes_project_seqtab_final.rds \
+#     data/dada2/02_nochimera_mergeruns/2023_16S_GorBEEa_prj/2023_16S_GorBEEa_prj_seqtab_final.rds \
 #     data/dada2 \
-#     blanes_project \
+#     2023_16S_GorBEEa_prj \
 #     data/assign_tax/your_database_training.fasta,data/assing_tax/your_database_species.fasta \
 #     dada \
 #     50
