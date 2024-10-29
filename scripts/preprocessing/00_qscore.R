@@ -2,8 +2,8 @@
 
 ## Load packages
 
-library(stringr)
-library(tidyverse)
+library(stringr) ; packageVersion("stringr")
+library(tidyverse) ; packageVersion("tidyverse")
 library(dada2)
 
 cat(paste0('\n',"You are using DADA2 version ", packageVersion('dada2'),'\n\n'))

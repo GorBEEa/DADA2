@@ -1,6 +1,6 @@
-library(tidyverse)
-library(DECIPHER)
-library(Biostrings)
+library(tidyverse) ; packageVersion("tidyverse")
+library(DECIPHER) ; packageVersion("DECIPHER")
+library(Biostrings) ; packageVersion("Biostrings")
 
 args <- commandArgs(trailingOnly = TRUE)
 

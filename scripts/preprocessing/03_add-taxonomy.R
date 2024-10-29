@@ -2,7 +2,7 @@
 #This script adds taxonomy to each of the inferred ASVs
 
 library(dada2)
-library(tidyverse)
+library(tidyverse) ; packageVersion("tidyverse")
 
 cat(paste0('\n',"You are using DADA2 version ", packageVersion('dada2'),'\n'))
 
