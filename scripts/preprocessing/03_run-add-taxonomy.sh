@@ -42,6 +42,7 @@
 
 #[5] /Taxonomy classification method/ 
 #   write 'decipher' if you want to use DECIPHER's IdTaxa() to classify
+#   write 'unite' if you are following ITS fungi pipeline
 #   write 'dada' if you want to use the classifier included in dada2
 
 #[6] /Confidence level of classification (DECIPHER) or minBoot (dada2)/
@@ -66,8 +67,7 @@ module load Mamba/23.1.0-4
 # conda activate your_env
 conda activate dada2
 
-# Example with DECIPHER
-
+# 1. Example with DECIPHER
 Rscript scripts/preprocessing/03_add-taxonomy.R \
     data/dada2/02_nochimera_mergeruns/2023_16S_GorBEEa_prj/2023_16S_GorBEEa_prj_seqtab_final.rds \
     data/dada2 \
@@ -76,12 +76,20 @@ Rscript scripts/preprocessing/03_add-taxonomy.R \
     decipher \
     60
 
-# Example with dada2 classifier (commented to avoid running it)
-
+# 2. Example with dada2 classifier (commented to avoid running it)
 # Rscript scripts/preprocessing/03_add-taxonomy.R \
 #     data/dada2/02_nochimera_mergeruns/2023_16S_GorBEEa_prj/2023_16S_GorBEEa_prj_seqtab_final.rds \
 #     data/dada2 \
 #     2023_16S_GorBEEa_prj \
 #     data/assign_tax/your_database_training.fasta,data/assing_tax/your_database_species.fasta \
 #     dada \
+#     50
+
+# 3. Example with UNITE classifier (commented to avoid running it)
+# Rscript scripts/preprocessing/03_add-taxonomy.R \
+#     data/dada2/02_nochimera_mergeruns/2023_ITS_GorBEEa_prj/2023_ITS_GorBEEa_prj_seqtab_final.rds \
+#     data/dada2 \
+#     2023_ITS_GorBEEa_prj \
+#     data/assign_tax/your_database_training.fasta,data/assing_tax/your_database_species.fasta \
+#     unite \
 #     50
