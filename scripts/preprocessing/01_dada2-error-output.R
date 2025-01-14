@@ -1,6 +1,6 @@
 ## ------------------------------------------------------------------------
-library(stringr) ; packageVersion("stringr")
-library(tidyverse) ; packageVersion("tidyverse")
+library(stringr)
+library(tidyverse)
 library(dada2)
 
 cat(paste0('\n',"You are using DADA2 version ", packageVersion('dada2'),'\n\n'))
@@ -32,7 +32,7 @@ pool_method <-
 
 ## ------------------------------------------------------------------------
 
-fnFs <- sort(list.files(path, pattern= 'R1.fastq'))
+fnFs <- sort(list.files(path, pattern = 'R1.fastq'))
 fnRs <- sort(list.files(path, pattern= 'R2.fastq'))
 
 if (length(fnFs) == 0){
