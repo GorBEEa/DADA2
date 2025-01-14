@@ -63,6 +63,33 @@ taxid <- t(sapply(ids, function(x) {
 
 colnames(taxid) <- ranks; rownames(taxid) <- getSequences(seqtab.nochim)
 
+####
+####
+
+} else if (grepl('[Uu]nite|UNITE', method)){ # use ITS fungi pipeline
+
+ if (is.na(threshold)){
+   threshold <- 50
+  }
+
+ cat('# The ITS fungi pipeline will be used\n')
+  taxid <- assignTaxonomy(seqtab.nochim,
+                        tax_db[1], 
+                        multithread=TRUE,
+                        tryRC = TRUE)
+  cat('# Taxonomy assigned to genus level\n')
+  
+  #if (!is.na(tax_db[2])) { # add species level if db available
+   # taxid <- addSpecies(taxid, 
+    #                    tax_db[2], 
+     #                   verbose=TRUE, 
+      #                  allowMultiple=3)
+    #cat('\n# Taxonomy assigned to species level\n')
+  #}
+#}
+##########
+##########
+
 } else { # use regular dada2 classificator
   
   if (is.na(threshold)){
