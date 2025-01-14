@@ -30,6 +30,8 @@ pool_method <-
         pool_method <- FALSE
     }
 
+cat('\n# Step 01 correct!\n\n')
+
 ## ------------------------------------------------------------------------
 
 fnFs <- sort(list.files(path, pattern = 'R1.fastq'))
@@ -53,6 +55,7 @@ if (length(unique(sample.names)) != length(fnFs)){
 fnFs <- file.path(path, fnFs)
 fnRs <- file.path(path, fnRs)
 
+cat('\n# Step 02 correct!\n\n')
 ## ------------------------------------------------------------------------
 #Check and create a dir for filtered fastqs
 dir.create(file.path(path, paste0("filtered_",name.run)), showWarnings = FALSE)
@@ -61,16 +64,19 @@ filt_path <- file.path(path, paste0("filtered_",name.run)) # Filtered fasta in f
 filtFs <- file.path(filt_path, paste0(sample.names, "_F_filt.fastq.gz"))
 filtRs <- file.path(filt_path, paste0(sample.names, "_R_filt.fastq.gz"))
 
+cat('\n# Step 03 correct!\n\n')
 ## ------------------------------------------------------------------------
 
 out <- filterAndTrim(fnFs, filtFs, fnRs, filtRs, truncLen=trunclen,
               maxEE=maxee,  rm.phix=TRUE,
-              compress=TRUE, multithread=TRUE)
+              compress=TRUE, multithread=FALSE)
 
+cat('\n# Step 04.a correct!\n\n')
 cat('# Filtering and trimming done with the following parameters:\n')
 cat(paste0('# Forward pair: trimming at ',trunclen[1],'bp and max expected error ',maxee[1],'\n'))
 cat(paste0('# Reverse pair: trimming at ',trunclen[2],'bp and max expected error ',maxee[2],'\n\n'))
 
+cat('\n# Step 04.b correct!\n\n')
 ## ------------------------------------------------------------------------
 #Check and create a dir for output results
 
@@ -79,10 +85,12 @@ dir.create(file.path(output, "01_errors-output", name.run), showWarnings = FALSE
 
 output <- str_c(output,"/01_errors-output/",name.run,"/")
 
+cat('\n# Step 05 correct!\n\n')
 ## ------------------------------------------------------------------------
 errF <- learnErrors(filtFs, multithread=TRUE)
 errR <- learnErrors(filtRs, multithread=TRUE)
 
+cat('\n# Step 06 correct!\n\n')
 ## ------------------------------------------------------------------------
 err.plotf <- plotErrors(errF, nominalQ=TRUE)
 ggsave(str_c(output,"errors_",name.run,"_fwd.pdf"),plot=err.plotf, width = 9, height = 8)
@@ -91,6 +99,7 @@ ggsave(str_c(output,"errors_",name.run,"_rev.pdf"),plot=err.plotr, width = 9, he
 
 cat('\n# Errors learnt\n')
 
+cat('\n# Step 06 correct!\n\n')
 ## ------------------------------------------------------------------------
 derepFs <- derepFastq(filtFs, verbose=TRUE)
 derepRs <- derepFastq(filtRs, verbose=TRUE)
@@ -101,6 +110,7 @@ names(derepRs) <- sample.names
 
 cat('\n# Dereplication done\n\n')
 
+cat('\n# Step 07 correct!\n\n')
 ## ------------------------------------------------------------------------
 if (pool_method == TRUE){
     cat('\n# Performing dada inference with pooling\n\n')
@@ -116,6 +126,7 @@ dadaRs <- dada(derepRs, err=errR, multithread=TRUE,pool=pool_method)
 
 cat('\n# DADA2 algorithm performed\n\n')
 
+cat('\n# Step 08 correct!\n\n')
 ## ------------------------------------------------------------------------
 mergers <- mergePairs(dadaFs, derepFs,
                       dadaRs, derepRs,
@@ -123,6 +134,7 @@ mergers <- mergePairs(dadaFs, derepFs,
 
 cat('# Pairs were merged\n\n')
 
+cat('\n# Step 09 correct!\n\n')
 ## ------------------------------------------------------------------------
 seqtab <- makeSequenceTable(mergers)
 
@@ -132,6 +144,8 @@ cat("\n# The variants (ASVs) have the following length distribution:\n")
 table(nchar(getSequences(seqtab)))
 
 saveRDS(seqtab, str_c(output,name.run,"_seqtab.rds"))
+
+cat('\n# Step 10 correct!\n\n')
 ## ------------------------------------------------------------------------
 
 getN <- function(x) sum(getUniques(x))
