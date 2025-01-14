@@ -120,9 +120,14 @@ colnames(taxid) <- ranks; rownames(taxid) <- getSequences(seqtab.nochim)
 asv_seqs <- colnames(seqtab.nochim)
 asv_headers <- vector(dim(seqtab.nochim)[2], mode="character")
 
-for (i in 1:dim(seqtab.nochim)[2]) {
+for (i in seq_len(dim(seqtab.nochim)[2])) {
   asv_headers[i] <- paste(">ASV", i, sep="_")
 }
+
+# Above the solution provided by copilot. Below my code
+#for (i in 1:dim(seqtab.nochim)[2]) {
+#  asv_headers[i] <- paste(">ASV", i, sep="_")
+#}
 
 # making and writing out a fasta of our final ASV seqs:
 asv_fasta <- c(rbind(asv_headers, asv_seqs))
