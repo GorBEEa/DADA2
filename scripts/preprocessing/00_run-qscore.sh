@@ -49,7 +49,7 @@ module load Mamba/23.1.0-4
 conda activate dada2
 
 Rscript scripts/preprocessing/00_qscore.R \
-        data/trimmed \
+        data/raw \
         data/dada2 \
         2023_16S_GorBEEa_prj
 
