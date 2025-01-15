@@ -255,6 +255,7 @@ sample_data <- data.frame(
   color_p = color_p,   # Colors based on 'period'
   color_s = color_s,   # Colors based on 'site'
   type = type,
+  plate = plate,
   quant_reading = quant_reading,
   stringsAsFactors = FALSE
 )
