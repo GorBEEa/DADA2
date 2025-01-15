@@ -94,7 +94,7 @@ saveRDS(seqtab, paste0(output, name, "_seqtab_final.rds"))
 # Extract the FASTA from the dataset
 uniquesToFasta(seqtab,
                paste0(output, name, "_seqtab_final.fasta"),
-               ids= paste0("asv",c(1:ncol(seqtab)), ";size=", colSums(seqtab)))
+               ids= paste0("asv",c(seq_len(ncol(seqtab))), ";size=", colSums(seqtab)))
 
 track.final <- track.final %>%
                mutate( diff.total = round(collapsed_100 / raw, digits =2))

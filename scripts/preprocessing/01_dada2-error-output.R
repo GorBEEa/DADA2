@@ -31,7 +31,6 @@ pool_method <-
     }
 
 cat('\n# Step 01 correct!\n\n')
-
 ## ------------------------------------------------------------------------
 
 fnFs <- sort(list.files(path, pattern = 'R1.fastq'))

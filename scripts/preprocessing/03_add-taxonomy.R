@@ -166,6 +166,7 @@ period <- character(length(sample_names))
 site <- character(length(sample_names))
 specimen <- character(length(sample_names))
 type <- character(length(sample_names))
+plate <- character(length(sample_names))
 quant_reading <- character(length(sample_names))
 
 # Loop through each sample name to extract the necessary information
@@ -178,12 +179,14 @@ for (i in seq_along(sample_names)) {
     period[i] <- paste0("p", substr(sample, 6, 7))      # Extract period (characters 6 and 7) and add "p" at the beginnig
     site[i] <- paste0("s", substr(sample, 8, 9))        # Extract site (characters 8 and 9) and add "s" at the beginnig
     specimen[i] <- substr(sample, 10, 12)               # Extract specimen (characters 10 to 12)
+    plate[i] <- substr(sample, nchar(sample) - 2, nchar(sample))  # Extract last 3 characters (plate)
     type[i] <- "sample"                                 # Add sample type
   } else {
     # Handle cases like "neg9_16S"
     year[i] <- NA
     period[i] <-"pNA"
     site[i] <- "sNA"
+    plate[i] <- substr(sample, nchar(sample) - 2, nchar(sample))  # Extract last 3 characters (plate)
     type[i] <- "negative"
     # Assign NA with a counter (e.g., "NA1", "NA2", etc.)
     specimen[i] <- paste0("NA", na_counter)
