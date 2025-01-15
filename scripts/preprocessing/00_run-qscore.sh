@@ -27,7 +27,7 @@
 #    has to be present on the left and separated by an underscore.
 #    (multiple underscores are OK as long as the name is on the left).
 #    Examples: sample4582515-ITS1-gorbea_R1.fastq.gz
-#              GBP23040702M_16S_R2.fastq.gz
+#              GBP23040702M_16S_B96_R2.fastq.gz
 
 #[2] /output dir/ A directory in which all the output will be stored.
 #                 If you have copied the github project, you should have

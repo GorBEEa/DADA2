@@ -26,8 +26,8 @@
 #[1] /input dataset/, with the fastq.gz (the name of the samples
 #    has to be present on the left and separated by an underscore.
 #    (multiple underscores are OK as long as the name is on the left).
-#    Example: sample120412-g20-mallorca_R1.fastq.gz
-#    Sample name will be sample120412-g20-mallorca, which is good bc it will be an unique identifier
+#    Example: GBP23040702M_16S_B96_R1.fastq.gz
+#    Sample name will be GBP23040702M_16S_B96, which is good bc it will be an unique identifier
 #    But maybe you want a cleaner one. Your decision!
 
 #[2] /output dir/ Usually it should be in data/, since afterwards you will use it

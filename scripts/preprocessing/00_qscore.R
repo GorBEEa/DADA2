@@ -107,10 +107,17 @@ ggsave(plot = qplot_r_lines,
 cat(paste0('# Two files ("forward.pdf" and "reverse.pdf") were created in "', out.diag,'". They contain the quality profile of the first 9 samples.\n'))
 cat('# You have to copy them to your local computer using "scp user@hyperion.sw.ehu.es:path/to/files/*pdf ." and check them to decide where to trim.\n')
 
-cat('\nAll done!\n\n')
+cat('\n# All done!\n\n')
 
 # The script generates an artifactual pdf in the main directory.
 # We are going to remove it. It is a bad solution, but a solution after all!
 if (file.exists('Rplots.pdf')) file.remove('Rplots.pdf')
+
+cat('\n-._    _.--\'"`\'--._    _.--\'"`\'--._    _.--\'"`\'--._    _ \n')
+cat('\'-:`.\'|`|"\'-:.  \'-:`.\'|`|"\'-:.  \'-:`.\'|`|"\'-:.  \'.` : \'.   \n')
+cat('  \'.  \'.  | |  | |\'.  \'.  | |  | |\'.  \'.  | |  | |\'.  \'.:   \'.  \'.\n')
+cat('  : \'.  \'.| |  | |  \'.  \'.| |  | |  \'.  \'.| |  | |  \'.  \'.  : \'.  `.\n')
+cat('  \'   \'.  `.:_ | :_.\' \'.  `.:_ | :_.\' \'.  `.:_ | :_.\' \'.  `.\'   `.\n')
+cat('         `-..,..-\'       `-..,..-\'       `-..,..-\'       `         `\n\n')
 
 # END

@@ -179,4 +179,17 @@ cat('# Remember that this table still contains chimeras. You have now to run scr
 cat(paste0('# In "',str_c(output,name.run,"_track_analysis.tsv"),"\" you will find a table where you can check the loss of reads in each step. Check it out to see if everything's correct!",'\n'))
 cat('\n# All done!\n\n')
 
+cat('              \\     /\n')
+cat('          \\    o ^ o    /\n')
+cat('            \\ (     ) /\n')
+cat(' ____________(%%%%%%%)____________\n')
+cat('(     /   /  )%%%%%%%(  \\   \\     )\n')
+cat('(___/___/__/           \\__\\___\\___)\n')
+cat('   (     /  /(%%%%%%%)\\  \\     )\n')
+cat('    (__/___/ (%%%%%%%) \\___\\__)\n')
+cat('            /(       )\\\n')
+cat('          /   (%%%%%)   \\\n')
+cat('               (%%%)\n')
+cat('                 !\n\n')
+
 # END

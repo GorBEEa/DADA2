@@ -106,3 +106,17 @@ cat(paste0('# A FASTA file with your final ASVs was written in "',paste0(output,
 cat(paste0('# In "',paste0(output, name, "_track_analysis_final.tsv"),"\" you will find a table where you can check the loss of reads in each step. Check it out to see if everything's correct!",'\n'))
 cat('\n# All done!\n\n')
 
+cat('              \\     /\n')
+cat('          \\    o ^ o    /\n')
+cat('            \\ (     ) /\n')
+cat(' ____________(%%%%%%%)____________\n')
+cat('(     /   /  )%%%%%%%(  \\   \\     )\n')
+cat('(___/___/__/           \\__\\___\\___)     -._    _.--\'"`\'--._    _.--\'"`\'--._    _.--\'"`\'--._    _\n')
+cat('   (     /  /(%%%%%%%)\\  \\     )     \'-:`.\'|`|"\'-:.  \'-:`.\'|`|"\'-:.  \'-:`.\'|`|"\'-:.  \'.` : \'.\n')
+cat('    (__/___/ (%%%%%%%) \\___\\__)            \'.  \'.  | |  | |\'.  \'.  | |  | |\'.  \'.  | |  | |\'.  \'.:   \'.  \'.\n')
+cat('            /(       )\\                     : \'.  \'.| |  | |  \'.  \'.| |  | |  \'.  \'.| |  | |  \'.  \'.  : \'.  `.\n')
+cat('          /   (%%%%%)   \\           \'   \'.  `.:_ | :_.\' \'.  `.:_ | :_.\' \'.  `.:_ | :_.\' \'.  `.\'   `.\n')
+cat('               (%%%)                                `-..,..-\'       `-..,..-\'       `-..,..-\'       `         `\n')
+cat('                 !\n\n')
+
+#END
