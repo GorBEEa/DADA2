@@ -88,3 +88,22 @@ cat(paste0('# An OTU to ASV correspondence table was created, you can find it in
            '"\n'))
 
 cat('# All done!\n')
+
+cat('              \\     /\n')
+cat('          \\    o ^ o    /\n')
+cat('            \\ (     ) /\n')
+cat(' ____________(%%%%%%%)____________\n')
+cat('(     /   /  )%%%%%%%(  \\   \\     )\n')
+cat('(___/___/__/           \\__\\___\\___)\n')
+cat('   (     /  /(%%%%%%%)\\  \\     )\n')
+cat('    (__/___/ (%%%%%%%) \\___\\__)\n')
+cat('            /(       )\\\n')
+cat('          /   (%%%%%)   \\\n')
+cat('               (%%%)\n')
+cat('                 !\n\n')
+
+cat('           ┏┓    ┳┓┏┓┏┓  \n')
+cat('           ┃┓┏┓┏┓┣┫┣ ┣ ┏┓\n')
+cat('           ┗┛┗┛┛ ┻┛┗┛┗┛┗┻\n\n')
+
+# END
