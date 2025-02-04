@@ -53,7 +53,7 @@ Rscript scripts/preprocessing/00_qscore.R \
         data/dada2 \
         2023_16S_GorBEEa_prj
 
-# IMPORTANT POINT !!!!
+# IMPORTANT POINT !!!!!
 # If you want to save the ouptput//errors in a logfile, simply add
 # > logout.txt 2> logout_err.txt to have all the info
 
